@@ -1,0 +1,130 @@
+DEBUG - 2025-11-25 01:05:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-25 01:05:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-25 01:06:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-25 01:06:10 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'movix_db' in C:\xamppbaru\htdocs\Movix\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xamppbaru\htdocs\Movix\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'movix_db', 3306, '', 0)
+#1 C:\xamppbaru\htdocs\Movix\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xamppbaru\htdocs\Movix\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xamppbaru\htdocs\Movix\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xamppbaru\htdocs\Movix\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xamppbaru\htdocs\Movix\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('el.arcon.rmp@gm...', 'users.email', Array)
+#6 C:\xamppbaru\htdocs\Movix\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('el.arcon.rmp@gm...', 'users.email', Array, NULL, 'email')
+#7 C:\xamppbaru\htdocs\Movix\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'el.arcon.rmp@gm...', Array, Array, 'email')
+#8 C:\xamppbaru\htdocs\Movix\app\Controllers\Auth.php(43): CodeIgniter\Validation\Validation->run()
+#9 C:\xamppbaru\htdocs\Movix\system\CodeIgniter.php(933): App\Controllers\Auth->processRegister()
+#10 C:\xamppbaru\htdocs\Movix\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#11 C:\xamppbaru\htdocs\Movix\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xamppbaru\htdocs\Movix\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xamppbaru\htdocs\Movix\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xamppbaru\htdocs\Movix\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xamppbaru\htdocs\Movix\system\rewrite.php(44): require_once('C:\\xamppbaru\\ht...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'movix_db' in C:\xamppbaru\htdocs\Movix\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xamppbaru\htdocs\Movix\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xamppbaru\htdocs\Movix\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xamppbaru\htdocs\Movix\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\xamppbaru\htdocs\Movix\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xamppbaru\htdocs\Movix\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('el.arcon.rmp@gm...', 'users.email', Array)
+#5 C:\xamppbaru\htdocs\Movix\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('el.arcon.rmp@gm...', 'users.email', Array, NULL, 'email')
+#6 C:\xamppbaru\htdocs\Movix\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'el.arcon.rmp@gm...', Array, Array, 'email')
+#7 C:\xamppbaru\htdocs\Movix\app\Controllers\Auth.php(43): CodeIgniter\Validation\Validation->run()
+#8 C:\xamppbaru\htdocs\Movix\system\CodeIgniter.php(933): App\Controllers\Auth->processRegister()
+#9 C:\xamppbaru\htdocs\Movix\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#10 C:\xamppbaru\htdocs\Movix\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xamppbaru\htdocs\Movix\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xamppbaru\htdocs\Movix\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xamppbaru\htdocs\Movix\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xamppbaru\htdocs\Movix\system\rewrite.php(44): require_once('C:\\xamppbaru\\ht...')
+#15 {main}
+CRITICAL - 2025-11-25 01:06:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'movix_db'
+[Method: POST, Route: auth/register]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('el.arcon.rmp@gmmail.com', 'users.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('el.arcon.rmp@gmmail.com', 'users.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'el.arcon.rmp@gmmail.com', [...], [...], 'email')
+ 7 APPPATH\Controllers\Auth.php(43): CodeIgniter\Validation\Validation->run()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->processRegister()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xamppbaru\\htdocs\\Movix\\public\\index.php')
+DEBUG - 2025-11-25 01:06:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-25 01:06:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-25 01:11:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-25 01:12:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-25 01:12:01 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'movix_db' in C:\xamppbaru\htdocs\Movix\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xamppbaru\htdocs\Movix\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'movix_db', 3306, '', 0)
+#1 C:\xamppbaru\htdocs\Movix\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xamppbaru\htdocs\Movix\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xamppbaru\htdocs\Movix\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xamppbaru\htdocs\Movix\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xamppbaru\htdocs\Movix\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('adw@gmail.com', 'users.email', Array)
+#6 C:\xamppbaru\htdocs\Movix\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('adw@gmail.com', 'users.email', Array, NULL, 'email')
+#7 C:\xamppbaru\htdocs\Movix\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'adw@gmail.com', Array, Array, 'email')
+#8 C:\xamppbaru\htdocs\Movix\app\Controllers\Auth.php(43): CodeIgniter\Validation\Validation->run()
+#9 C:\xamppbaru\htdocs\Movix\system\CodeIgniter.php(933): App\Controllers\Auth->processRegister()
+#10 C:\xamppbaru\htdocs\Movix\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#11 C:\xamppbaru\htdocs\Movix\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xamppbaru\htdocs\Movix\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xamppbaru\htdocs\Movix\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xamppbaru\htdocs\Movix\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 C:\xamppbaru\htdocs\Movix\system\rewrite.php(44): require_once('C:\\xamppbaru\\ht...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'movix_db' in C:\xamppbaru\htdocs\Movix\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xamppbaru\htdocs\Movix\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xamppbaru\htdocs\Movix\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xamppbaru\htdocs\Movix\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\xamppbaru\htdocs\Movix\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xamppbaru\htdocs\Movix\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('adw@gmail.com', 'users.email', Array)
+#5 C:\xamppbaru\htdocs\Movix\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('adw@gmail.com', 'users.email', Array, NULL, 'email')
+#6 C:\xamppbaru\htdocs\Movix\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'adw@gmail.com', Array, Array, 'email')
+#7 C:\xamppbaru\htdocs\Movix\app\Controllers\Auth.php(43): CodeIgniter\Validation\Validation->run()
+#8 C:\xamppbaru\htdocs\Movix\system\CodeIgniter.php(933): App\Controllers\Auth->processRegister()
+#9 C:\xamppbaru\htdocs\Movix\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#10 C:\xamppbaru\htdocs\Movix\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xamppbaru\htdocs\Movix\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xamppbaru\htdocs\Movix\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xamppbaru\htdocs\Movix\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xamppbaru\htdocs\Movix\system\rewrite.php(44): require_once('C:\\xamppbaru\\ht...')
+#15 {main}
+CRITICAL - 2025-11-25 01:12:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'movix_db'
+[Method: POST, Route: auth/register]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique('adw@gmail.com', 'users.email', [...])
+ 5 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('adw@gmail.com', 'users.email', [...], null, 'email')
+ 6 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'email', 'adw@gmail.com', [...], [...], 'email')
+ 7 APPPATH\Controllers\Auth.php(43): CodeIgniter\Validation\Validation->run()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->processRegister()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xamppbaru\\htdocs\\Movix\\public\\index.php')
+DEBUG - 2025-11-25 01:31:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-25 01:31:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-25 01:31:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-25 01:32:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-25 01:32:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

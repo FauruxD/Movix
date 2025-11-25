@@ -29,3 +29,16 @@ $routes->group('', ['filter' => 'auth'], function($routes) {
     $routes->get('dashboard', 'Home::dashboard');
     $routes->get('film/(:num)', 'Home::watchFilm/$1');
 });
+$routes->group('favorite', ['filter' => 'auth'], function($routes) {
+    $routes->get('/', 'Favorite::index');                    
+    $routes->post('toggle', 'Favorite::toggle');              
+    $routes->post('check-status', 'Favorite::checkStatus');  
+});
+
+$routes->group('watch', ['filter' => 'auth'], function($routes) {
+    $routes->get('/', 'Watch::index');                        
+    $routes->get('player/(:num)', 'Watch::player/$1');        
+    $routes->post('toggle', 'Watch::toggle');                 
+    $routes->post('mark-watched', 'Watch::markWatched');     
+    $routes->post('check-status', 'Watch::checkStatus');      
+});
